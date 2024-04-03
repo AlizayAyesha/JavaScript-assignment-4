@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Validation</title>
+    <script>
+     function isEmailValid(email)  {
+    var containsAtSymbol = email.includes("@");
+    var containsContactChars = /[a-zA-Z]/.test(email);
+
+    var atIndex = email.indexOf("@");
+    var charBeforeAt = atIndex > 0;
+
+    var dotIndex = email.indexOf(".", atIndex);
+    var dotAfterAtIndex = dotIndex > atIndex + 1;
+
+    return containsAtSymbol && containsContactChars && charBeforeAt && dotAfterAtIndex;
+}
+
+var email = prompt("Enter your Email:");
+
+if(isEmailValid(email)){
+    alert("Email is valid.");
+} else {
+    alert("Please enter a valid email.");
+}
+
+          
+    </script>
+</html>

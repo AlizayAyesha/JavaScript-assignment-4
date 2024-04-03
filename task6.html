@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dice Simulation</title>
+</head>
+<body>
+    <h1>Dice Simulation</h1>
+    <p id="diceValue">Random dice value: </p>
+
+    <script>
+        function displayRandomDiceValue() {
+            var diceValue = Math.floor(Math.random() * 6) + 1;
+
+    
+            document.getElementById("diceValue").innerText += diceValue;
+        }
+
+        
+        displayRandomDiceValue();
+    </script>
+</body>
+</html>

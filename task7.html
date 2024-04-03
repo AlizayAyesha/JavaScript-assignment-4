@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Word Occurrence Count</title>
+</head>
+<body>
+    <h1>Word Occurrence Count</h1>
+
+    <script>
+        // The input string
+        var sentence = "The quick brown fox jumps over the lazy dog";
+
+        // Convert the input string to lowercase
+        var lowercaseSentence = sentence.toLowerCase();
+
+        // Split the string into words
+        var words = lowercaseSentence.split(" ");
+
+        // Count the occurrences of the word "the"
+        var count = 0;
+        for (var i = 0; i < words.length; i++) {
+            if (words[i] === "the") {
+                count++;
+            }
+        }
+
+        // Display the result
+        document.write("<p>Number of occurrences of the word 'the': " + count + "</p>");
+    </script>
+</body>
+</html>

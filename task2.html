@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>String to Number Conversion</title>
+</head>
+<body>
+    <h1>String to Number Conversion</h1>
+    <p>Original String: "472"</p>
+    <p>Type of original string: <span id="originalStringType"></span></p>
+    <p>Converted Number: <span id="convertedNumber"></span></p>
+    <p>Type of converted number: <span id="convertedNumberType"></span></p>
+
+    <script>
+        // Original string
+        var originalString = "472";
+
+        // Convert string to number
+        var number = parseInt(originalString);
+
+        // Display the values and types in the browser
+        document.getElementById("originalStringType").innerText = typeof originalString;
+
+        document.getElementById("convertedNumber").innerText = number;
+       
+        document.getElementById("convertedNumberType").innerText = typeof number;
+    </script>
+</body>
+</html>

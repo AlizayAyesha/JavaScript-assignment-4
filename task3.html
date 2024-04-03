@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Validation</title>
+    <script>
+        function isValidPassword(password) {
+            var containsAlphabets = /[a-zA-Z]/.test(password);
+            var containsNumbers = /[0-9]/.test(password);
+
+            
+            var startsWithNumber = /^[^0-9]/.test(password);
+
+           
+            var isLongEnough = password.length >= 8;
+
+            
+            return containsAlphabets && containsNumbers && startsWithNumber && isLongEnough;
+        }
+
+    
+        var password = prompt("Enter a password :")
+
+            while(!isValidPassword(password)){
+    alert("Password is not valid please enter a valid password")
+    password = prompt("Enter a password")
+}
+  
+alert("Password is Valid")
+
+          
+    </script>
+</html>

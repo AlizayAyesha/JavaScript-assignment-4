@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number to Words Converter</title>
+</head>
+<body>
+    <h1>Number to Words Converter</h1>
+
+    <script>
+        // Define arrays for single-digit and two-digit numbers
+        var singleDigits = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"];
+        var teens = ["Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"];
+        var tens = ["", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"];
+
+        // Function to convert a two-digit number into words
+        function convertTwoDigitNumber(number) {
+            if (number < 10) {
+                return singleDigits[number];
+            } else if (number >= 10 && number < 20) {
+                return teens[number - 10];
+            } else {
+                var tensDigit = Math.floor(number / 10);
+                var onesDigit = number % 10;
+                return tens[tensDigit] + " " + singleDigits[onesDigit];
+            }
+        }
+
+        // Function to convert a number into words
+        function convertNumberToWords(number) {
+            if (number === 0) {
+                return "Zero";
+            }
+
+            var words = "";
+
+            // Convert hundreds place
+            if (number >= 100) {
+                var hundredsDigit = Math.floor(number / 100);
+                words += singleDigits[hundredsDigit] + " Hundred ";
+                number %= 100;
+            }
+
+            // Convert tens and ones places
+            words += convertTwoDigitNumber(number);
+
+            return words.trim();
+        }
+
+        // Test cases
+        var numbers = [23, 123];
+        for (var i = 0; i < numbers.length; i++) {
+            document.write("<p>" + numbers[i] + " in words: " + convertNumberToWords(numbers[i]) + "</p>");
+        }
+    </script>
+</body>
+</html>

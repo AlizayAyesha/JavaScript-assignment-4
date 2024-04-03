@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Remove HTML Tags</title>
+</head>
+<body>
+    <h1>Remove HTML Tags</h1>
+
+    <p><strong><em>Only print this</em></strong></p>
+    
+    <script>
+        function removeHtmlTags(inputString) {
+    return inputString.replace(/<[^>]*>/g, '');
+}
+
+var stringWithTags = '<p><strong><em>Only print this</em></strong></p>';
+var stringWithoutTags = removeHtmlTags(stringWithTags);
+console.log(stringWithoutTags);
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Analysis</title>
+</head>
+<body>
+    <h1>Number Analysis</h1>
+    <script>
+        var userInput = prompt("Enter a positive number:")
+
+var number= parseInt(userInput)
+
+if(isNaN(number) || number <= 0){
+    alert("invalide input please enter a positive number:")
+} else {
+    var roudOffValue = Math.round(number)
+    var floorValue =Math.floor(number)
+    var ceilValue = Math.ceil(number)
+
+document.write("<p>Number:" + number + "</p>")
+document.write("<p>Round Off Value:" + roudOffValue + "</p>")
+document.write("<p>Floor Value:" + floorValue + "</p>")
+document.write("<p>Ceil Value:" + ceilValue + "</p>") 
+}
+</script>
+</body>
+    </html>
